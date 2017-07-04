@@ -1,0 +1,1105 @@
+<body onload="historyInitailize();onloadExecute();this.focus();">
+<fieldset id="quickLink" style="padding:10px; display: none;">
+<legend>바로가기</legend>
+<ul>
+<li><a href="#cContent" onclick="skipid('cContent')">메인 컨텐츠로</a></li>
+<li><a href="#naviBar" onclick="skipid('naviBar')">네비게이션 메뉴로</a></li>
+<li><a href="#sideBar" onclick="skipid('sideBar')">사이드 메뉴로</a></li>
+<li><a href="#mainBody" onclick="skipid('mainBody')">메인 메뉴로</a></li>
+<li><a href="#footer" onclick="skipid('footer')">copyright</a></li>
+</ul>
+</fieldset>
+<form action="" method="post" name="scrapform">
+<input name="goplanet" type="hidden" value="http://scrap.cafe.daum.net/_dss_/scrap_blog?target_location_code=3"/>
+<input name="gocafe" type="hidden" value="http://scrap.cafe.daum.net/_dss_/scrap_blog?target_location_code=1"/>
+<input name="goblog" type="hidden" value="http://scrap.cafe.daum.net/_dss_/scrap_blog?target_location_code=4"/>
+<input name="gomail" type="hidden" value="http://scrap.cafe.daum.net/_dss_/scrap_blog?target_location_code=15"/>
+<input name="goyozm" type="hidden" value="http://yozm.daum.net/api/popup/prePost?sourceid=22"/>
+<input name="location_id" type="hidden" value="0p4Sd"/>
+<input name="folder_id" type="hidden"/>
+<input name="data_id" type="hidden"/>
+<input name="source_location_code" type="hidden" value="4"/>
+<input name="source_etc" type="hidden" value="blog"/>
+<input name="scrap_etc" type="hidden"/>
+</form>
+<form action="/_blog/BlackListRegister.do" method="post" name="blackInfo">
+<input name="blogid" type="hidden" value="0p4Sd"/>
+<input name="jobKind" type="hidden" value=""/>
+<input name="blackConf" type="hidden" value=""/>
+<input name="blackKind" type="hidden" value=""/>
+</form>
+<form action="/_blog/TrackbackDelete.do" method="post" name="trackform">
+<input name="blogid" type="hidden" value="0p4Sd"/>
+<input name="articleno" type="hidden" value=""/>
+<input name="no" type="hidden" value=""/>
+<input name="regdt" type="hidden" value=""/>
+</form>
+<form action="/_blog/CommentDelete.ajax" method="post" name="delFrm">
+<input name="blogid" type="hidden" value="0p4Sd"/>
+<input name="articleno" type="hidden" value=""/>
+<input name="cmmtno" type="hidden" value=""/>
+<input name="open" type="hidden" value=""/>
+<input name="mode" type="hidden" value=""/>
+<input name="regdt" type="hidden" value=""/>
+<input name="euserid" type="hidden" value=""/>
+<input name="password" type="hidden" value=""/>
+</form>
+<form action="/_blog/blackListReg.ajax" method="post" name="blackListRegFrm">
+<input name="blogid" type="hidden" value="0p4Sd"/>
+<input name="new" type="hidden" value="y"/>
+<input name="jobKind" type="hidden" value=""/>
+<input name="blackKind" type="hidden" value=""/>
+<input name="blackConf" type="hidden" value=""/>
+<input name="comment" type="hidden" value=""/>
+<input name="articleNo" type="hidden" value=""/>
+<input name="commentNo" type="hidden" value=""/>
+</form>
+<form method="post" name="filefilterForm">
+<input name="filePath" type="hidden" value=""/>
+<input name="fileUrl" type="hidden" value=""/>
+<input name="fileKeyno" type="hidden" value=""/>
+<input name="fileName" type="hidden" value=""/>
+</form>
+<div id="ajax_submit_layer"></div>
+<iframe frameborder="0" height="0" id="ArticleBgmPlay" name="ArticleBgmPlay" scrolling="no" style="position: absolute; z-index: 1;" title="게시글 음악 플레이어" width="0"></iframe>
+<form name="formBGM2">
+<input name="vol" onchange="ArticleBgm.setVolume()" size="3" type="hidden" value="30"/>
+</form>
+<div id="ajax_layer_load">
+<script language="javascript" type="text/javascript">
+//<![CDATA[
+daumFlash_general('http://i1.daumcdn.net/pimg/blog/p_img2/loading.swf', '110','21','ajax_layer_load');
+//]]>
+</script>
+</div>
+<div id="dashboard">
+<div class="lefttop" id="resultBox"><div id="resultTop"></div><div id="resultarea"></div><div id="resultBot"></div></div>
+</div>
+<div id="globalLayer">
+</div>
+<div id="footnoteBox"></div>
+<div class="wrapLayout1_D wrapAlignC wrapWidthW wrapSpec1_DW wrapLangKR" id="wrap">
+<!-- 미니다음 -->
+<div id="minidaum">
+<div id="top_minidaum">
+<div id="top_Lmenu"><!-- div style="padding: 5px 0 0 0"><a target="_top" style="color:#828282">내 블로그의 특별한 순간들!</a></div --></div>
+<div id="top_Rmenu">
+<ul class="N">
+<li class="login_btn minidaum_menu">
+<a href="https://logins.daum.net/accounts/loginform.do?url=http://blog.daum.net/0709im&amp;category=blog" target="_top"><img alt="로그인" class="btn_login" src="http://i1.daumcdn.net/pimg/blog4/skin/common/img_blank.gif"/></a>
+</li>
+<li class="minidaum_menu"><a class="menu_link" href="http://www.daum.net/?t__nil_blognavi=daum" target="_top">Daum</a></li>
+<li class="vBar">|</li>
+<li class="minidaum_menu"><a class="menu_link" href="http://blog.daum.net/?t__nil_blognavi=blog" target="_top">블로그</a></li>
+<li class="vBar">|</li>
+<li class="minidaum_menu">
+<a href="#;" onclick="chg_class(this, '', 'qMenu_service', 'serviceArr'); return false;">바로가기 <img class="miniArrDown" id="serviceArr" src="http://i1.daumcdn.net/pimg/blog4/skin/common/img_blank.gif"/></a>
+<div class="lay_quickmenu minidaum_lay lay_by_right" id="qMenu_service">
+<ul class="list_quickmenu">
+<li class="fst"><a class="link" href="http://cafe.daum.net/?t__nil_blognavi=link&amp;nil_id=1" target="_top">카페</a></li>
+<li><a class="link" href="http://mail.daum.net/hanmail/Goto.daum?error=login&amp;t__nil_blognavi=link&amp;nil_id=2" target="_top">메일</a></li>
+<li><a class="link" href="http://media.daum.net/" target="_top">뉴스</a></li>
+<li><a class="link" href="http://shopping.daum.net/main.daum" target="_top">쇼핑</a></li>
+</ul>
+<a class="btn_allview" href="http://www.daum.net/doc/sitemap/">전체보기</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	var articleTitleVer = '20100816';
+	</script>
+<div class="containerTop" id="containerTop"></div>
+<div class="container containerWidth borderN" id="container">
+<!-- 타이틀 -->
+<div id="mainTitle">
+<!-- 타이틀 배경 -->
+<div class="" id="titleBackground"></div>
+<div class="titleLink" onclick="document.location.href='/_blog/BlogTypeMain.do?blogid=0p4Sd';"></div>
+<!-- 블로그명 -->
+<div id="titleBlogName">
+<a href="/_blog/BlogTypeMain.do?blogid=0p4Sd"><img alt="효빈, 길을 나서다 ~" src="http://i1.daumcdn.net/pimg/blog4/skin/common/img_blank.gif"/></a>
+</div>
+</div><!-- end mainTitle -->
+<div class="" id="mainBody">
+<div id="contentArea">
+<form action="/_blog/BlogTypeView.do" method="get" name="articleTypeList">
+<input name="blogid" type="hidden" value="0p4Sd"/>
+<input name="vblogid" type="hidden" value=""/>
+<input name="beforePage" type="hidden" value="1"/>
+<input name="maxarticleno" type="hidden" value="465"/>
+<input name="minarticleno" type="hidden" value="465"/>
+<input name="maxregdt" type="hidden" value="20170630000304"/>
+<input name="minregdt" type="hidden" value="20170630000304"/>
+<input name="currentPage" type="hidden" value="1"/>
+<input name="listScale" type="hidden" value="20"/>
+<input name="viewKind" type="hidden" value=""/>
+<input name="dispkind" type="hidden" value="B2201"/>
+<input id="CATEGORYID" name="CATEGORYID" type="hidden" value="53"/>
+<input id="categoryId" name="categoryId" type="hidden" value="53"/>
+<input name="articleno" type="hidden" value="465"/>
+<input name="regdt" type="hidden" value="20170630000304"/>
+<input name="date" type="hidden" value=""/>
+<input name="calv" type="hidden" value=""/>
+<input name="chgkey" type="hidden" value="oCYAtTEQcPjAPewu45Dqx_mSPwf6NWEqjFSfAT.zoFs0"/>
+</form>
+<form action="/_blog/CommentCreate.do" method="post" name="cmmtform">
+<input name="blogid" type="hidden" value="0p4Sd"/>
+<input name="articleno" type="hidden" value=""/>
+<input name="name" type="hidden" value=""/>
+<input name="open" type="hidden" value=""/>
+<input name="texticon" type="hidden" value=""/>
+<input name="password" type="hidden" value=""/>
+<input name="contents" type="hidden" value=""/>
+<input name="cmmtblog" type="hidden" value=""/>
+<input name="cmmtmail" type="hidden" value=""/>
+<input name="isModify" type="hidden"/>
+<input name="pcmmtno" type="hidden" value=""/>
+<input name="cmmtloginyn" type="hidden" value=""/>
+<input name="cmmtno" type="hidden" value=""/>
+<input name="no" type="hidden" value=""/>
+<input name="mode" type="hidden" value=""/>
+<input name="regdt" type="hidden" value=""/>
+<input name="euserid" type="hidden" value=""/>
+<input name="returnURL" type="hidden" value="/_blog/goBlog.do?blogid=0p4Sd&amp;currentPage=1&amp;beforePage=1&amp;maxarticleno=465&amp;minarticleno=465&amp;maxregdt=20170630000304&amp;minregdt=20170630000304"/>
+<input name="cmmtkey" type="hidden" value="oCYAtTEQcPjAPewu45Dqx_mSPwf6NWEqjFSfAT.zoFs0"/>
+</form>
+<form action="/_blog/VerifyRegister.do" method="post" name="verifyInfo">
+<input name="blogid" type="hidden" value="0p4Sd"/>
+<input name="articleno" type="hidden" value=""/>
+<input name="verifyID" type="hidden" value=""/>
+<input name="verifyEmail" type="hidden" value=""/>
+<input name="verifyBlog" type="hidden" value=""/>
+<input name="returnURL" type="hidden" value="/_blog/goBlog.do?blogid=0p4Sd&amp;currentPage=1&amp;beforePage=1&amp;maxarticleno=465&amp;minarticleno=465&amp;maxregdt=20170630000304&amp;minregdt=20170630000304"/>
+<input name="parentVerifyNo" type="hidden" value=""/>
+<input name="verifyNo" type="hidden" value=""/>
+</form>
+<div class="WebB" id="cContent">
+<div class="cContentBox ">
+<div class="contentBoxT"><div class="roundTL"></div><div class="roundTC"></div><div class="roundTR"></div></div>
+<div class="cContentOuter"><div class="cContentinner">
+<div id="cS_mainTitle">
+<div class="listTypeT" id="cS_mainTitle_header">
+<h2> 2017년  <font style="font-size:12px; font-weight:normal;">(38)</font></h2>
+<ul id="cR_etc">
+<li><a class="viewTypeBoard" href="javascript:goListTitle(0)" title="목록보기">목록보기</a><span class="alpha50">|</span></li>
+<li><a class="viewTypeWebzine" href="javascript:goListWebzine(0)" title="요약보기">요약보기</a><span class="alpha50">|</span></li>
+<li><a class="viewTypeBlogSel" href="javascript:goListBody(0) " title="펼쳐보기">펼쳐보기</a></li>
+</ul>
+</div>
+</div>
+<!--==================[ Article Looping ]==================-->
+<form method="post" name="loopform">
+<!-------- LOOP ------------>
+<!-- 기존거 -->
+<script language="javascript">
+</script>
+<input id="tag_blogid" type="hidden" value="0p4Sd"/>
+<input id="tag_articleno" type="hidden" value="465"/>
+<div id="tag_blogId" style="display:none">0p4Sd</div>
+<div class="articlePrint" id="articlePrint_465" style="width: px;">
+<div id="title_465" style="display:none">청평사 유원지와 오봉산 (마적산~경운산~오봉산)</div>
+<div id="commentOpen_465" style="display:none">B0404</div>
+<table class="cContentHeader">
+<tr>
+<td>
+<div class="" style="">
+<div class="mainTitleText" id="mainTitleText1">
+<strong class="cB_TitleImage">
+																					청평사 유원지와 오봉산 (마적산~경운산~오봉산)
+																    				</strong>
+<span class="sVbar">|</span>
+<span class="cB_Folder"><a class="p12" href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=53&amp;dispkind=B2201" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=53&amp;dispkind=B2201','53'); return false;">2017년</a></span>
+</div>
+<div id="mainTitleFlash1" style="display: none;"></div>
+<script type="text/javascript">
+							window.articleViewer1 = new ArticleViewerManager('mainTitleFlash1', {
+								'width': '920',
+								'titlemaxnumlines': '5',
+								'titletext': encodeURIComponent(''+'청평사 유원지와 오봉산 (마적산~경운산~오봉산)'),
+								'titlefont': 'RixGoM' || 'RixGoM',
+								'titlesize': '20' || '24',
+								'titlecolor': '#e6eaef',
+								'titleicon': '',
+								'cattext': encodeURIComponent("2017년"),
+								'catfont': 'RixGoM',
+								'catsize': '12',
+								'catcolor': '#b3babb',
+								'catlink' : 'window.catClickCallback1',
+								'update_callback': 'window.articleViewer1.resizeFlashViewer'
+							});
+							
+							window.catClickCallback1 = function() {
+								viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&CATEGORYID=53&dispkind=B2201','53');	
+							}
+						</script>
+</div>
+</td>
+</tr>
+</table>
+<div class="cCont_line"></div>
+<div class="cContentFunc" id="cContentFunc">
+<div class="funcMenu_L">
+<div class="funcMenu_LL">
+<span class="cB_Name">효빈</span>
+<span class="cB_Tdate">2017.06.30 00:03</span>
+</div>
+</div>
+<div class="funcMenu_R">
+<a class="t11" href="/0709im/465" target="_top">http://blog.daum.net/0709im/465</a>
+<embed allowscriptaccess="always" flashvars="url=http://blog.daum.net/0709im/465&amp;urlName=글" height="14" id="TrackbackCopyButton465" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://i1.daumcdn.net/cafecj/flash/copyClipboard.swf" style="vertical-align:middle;" type="application/x-shockwave-flash" width="22" wmode="transparent"/>
+</div>
+</div>
+<div class="clearDiv"></div>
+<div class="trackbackSend" id="trackBackListLayer_465" style="display:none;"></div>
+<div class="cContentBody" id="cContentBody">
+<input id="view_loop_465" type="hidden" value="0"/>
+<input id="view_finish_465" type="hidden" value="false"/>
+<input id="view_theme_465" type="hidden" value="false"/>
+<div id="div_465" oncontextmenu="return true;">
+<iframe allowtransparency="true" frameborder="0" height="350" id="if_b_465" name="if_b_465" src="/_blog/hdn/ArticleContentsView.do?blogid=0p4Sd&amp;articleno=465&amp;looping=0&amp;longOpen=" title="게시글 영역" width="100%"></iframe>
+</div>
+<script language="javascript">
+					//ContentViewer.drawContent("b_465", '0'); 
+					document.getElementById("view_finish_465").value = true;
+				</script>
+</div>
+<div class="cContentInfo" id="cContentInfo">
+<div class="tagListBox">
+<div class="tagList fl" id="tagListLayer_465">
+<ul>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%82%B0%EB%94%B8%EA%B8%B0" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%82%B0%EB%94%B8%EA%B8%B0'); return false;" rel="tag">산딸기,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EB%85%B8%EB%A6%B0%EC%9E%AC%EB%82%98%EB%AC%B4" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EB%85%B8%EB%A6%B0%EC%9E%AC%EB%82%98%EB%AC%B4'); return false;" rel="tag">노린재나무,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%B4%88%EB%A1%B1%EA%BD%83" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%B4%88%EB%A1%B1%EA%BD%83'); return false;" rel="tag">초롱꽃,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EA%B4%91%EB%8C%80%EC%8B%B8%EB%A6%AC" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EA%B4%91%EB%8C%80%EC%8B%B8%EB%A6%AC'); return false;" rel="tag">광대싸리,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%8B%B8%EB%A6%AC" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%8B%B8%EB%A6%AC'); return false;" rel="tag">싸리,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EB%95%85%EB%B9%84%EC%8B%B8%EB%A6%AC" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EB%95%85%EB%B9%84%EC%8B%B8%EB%A6%AC'); return false;" rel="tag">땅비싸리,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%83%9D%EA%B0%95%EB%82%98%EB%AC%B4" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%83%9D%EA%B0%95%EB%82%98%EB%AC%B4'); return false;" rel="tag">생강나무,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%9A%B0%EC%82%B0%EB%82%98%EB%AC%BC" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%9A%B0%EC%82%B0%EB%82%98%EB%AC%BC'); return false;" rel="tag">우산나물,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EB%AF%BC%EB%B0%B1%EB%AF%B8%EA%BD%83" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EB%AF%BC%EB%B0%B1%EB%AF%B8%EA%BD%83'); return false;" rel="tag">민백미꽃,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%A4%84%EB%94%B8%EA%B8%B0" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%A4%84%EB%94%B8%EA%B8%B0'); return false;" rel="tag">줄딸기,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%A1%B1%EC%A0%9C%EB%B9%84%EC%8B%B8%EB%A6%AC" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%A1%B1%EC%A0%9C%EB%B9%84%EC%8B%B8%EB%A6%AC'); return false;" rel="tag">족제비싸리,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EA%B0%9C%EC%91%A5%EB%B6%80%EC%9F%81%EC%9D%B4" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EA%B0%9C%EC%91%A5%EB%B6%80%EC%9F%81%EC%9D%B4'); return false;" rel="tag">개쑥부쟁이,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%95%A0%EA%B8%B0%EB%82%98%EB%A6%AC" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%95%A0%EA%B8%B0%EB%82%98%EB%A6%AC'); return false;" rel="tag">애기나리,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%A1%B0%EB%A1%9D%EC%8B%B8%EB%A6%AC" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%A1%B0%EB%A1%9D%EC%8B%B8%EB%A6%AC'); return false;" rel="tag">조록싸리,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%ED%99%80%EC%95%84%EB%B9%84%EA%BD%83%EB%8C%80" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%ED%99%80%EC%95%84%EB%B9%84%EA%BD%83%EB%8C%80'); return false;" rel="tag">홀아비꽃대,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EB%B9%84%EC%A7%9C%EB%A3%A8" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EB%B9%84%EC%A7%9C%EB%A3%A8'); return false;" rel="tag">비짜루,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EA%B8%88%EA%B0%95%EC%B4%88%EB%A1%B1" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EA%B8%88%EA%B0%95%EC%B4%88%EB%A1%B1'); return false;" rel="tag">금강초롱,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%99%B8%EB%8C%80%EC%9C%BC%EC%95%84%EB%A6%AC" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%99%B8%EB%8C%80%EC%9C%BC%EC%95%84%EB%A6%AC'); return false;" rel="tag">외대으아리,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%B0%B8%EC%8B%B8%EB%A6%AC" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%EC%B0%B8%EC%8B%B8%EB%A6%AC'); return false;" rel="tag">참싸리,</a></li>
+<li><a class="d_11_161615" href="/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%ED%81%B0%EB%82%AD%EC%95%84%EC%B4%88" onclick="viewAjaxArticle('/_blog/tagArticleList.do?blogid=0p4Sd&amp;tagName=%ED%81%B0%EB%82%AD%EC%95%84%EC%B4%88'); return false;" rel="tag">큰낭아초</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div><!--articlePrint_-->
+<div class="cContentBottom" id="cContentBottom">
+<div class="cContentBottomL">
+<ul>
+</ul>
+</div><!-- cContentBottomL-->
+<div class="cContentBottomR">
+<div class="menuLayerDropList" id="articleLayerDrop_465" onmouseout="divDisplay('articleLayerDrop_465', 'none');" onmouseover="divDisplay('articleLayerDrop_465', 'block');">
+<ul>
+<li>
+<a>스크랩 금지</a>
+</li>
+<li class="line"></li>
+<li>
+<a href="#" onclick="goArticleReport('http://blog.daum.net/0709im/465', '청평사 유원지와 오봉산 (마적산~경운산~오봉산)', 'false'); return false;">신고</a>
+</li>
+</ul>
+</div><!--articleLayerDrop-->
+<div style="text-align:right;">
+<a class="thisPostToDo" href="javascript:;" id="articleLayerOpt465" onclick="divDisplay('articleLayerDrop_465', 'block', true);">이 글을...</a>
+<a>(0)</a>
+</div>
+</div><!--cContentBottomR-->
+</div><!--cContentBottm-->
+<!-- 댓글 end -->
+<!-- 첨부파일 end -->
+<!-------- LOOP END ------------>
+</form>
+<div id="pagingBox">
+<div class="fr"><span class="arrowFont">▲</span> <a href="#contentArea">top</a></div>
+<div id="cNumbering"><a class="Select">1</a><a class="Out" href="javascript:goPage(2);" onmouseout="this.className='Out'" onmouseover="this.className='Over'">2</a><a class="Out" href="javascript:goPage(3);" onmouseout="this.className='Out'" onmouseover="this.className='Over'">3</a><a class="Out" href="javascript:goPage(4);" onmouseout="this.className='Out'" onmouseover="this.className='Over'">4</a><a class="Out" href="javascript:goPage(5);" onmouseout="this.className='Out'" onmouseover="this.className='Over'">5</a><a class="Out" href="javascript:goPage(6);" onmouseout="this.className='Out'" onmouseover="this.className='Over'">6</a><a class="Out" href="javascript:goPage(7);" onmouseout="this.className='Out'" onmouseover="this.className='Over'">7</a><a class="Out" href="javascript:goPage(8);" onmouseout="this.className='Out'" onmouseover="this.className='Over'">8</a><a class="Out" href="javascript:goPage(9);" onmouseout="this.className='Out'" onmouseover="this.className='Over'">9</a><a class="Out" href="javascript:goPage(10);" onmouseout="this.className='Out'" onmouseover="this.className='Over'">10</a>...<a class="Out" href="javascript:goPage(38);" onmouseout="this.className='Out'" onmouseover="this.className='Over'">38</a> <a class="cB_Text" href="javascript:goPage(11);">다음 <span class="arrowFont">▶</span></a></div>
+</div>
+<div class="cContentCateMore">
+<div class="otherMore"><a class="p11" href="javascript:goListTitle(0)">목록보기</a></div>
+<h4>
+<span class="cB_Amp">'2017년'</span> 카테고리의 다른 글
+		</h4>
+<div class="tdLine"></div>
+<ul>
+<li>
+<span class="fr sNumber alpha50">2017-06-30 00:03:04</span>
+<p style="background: url(http://i1.daumcdn.net/pimg/blog3/menu_icon13.gif) no-repeat 0 6px; padding: 0 0 0 8px;">
+<a class="bold" title="청평사 유원지와 오봉산 (마적산~경운산~오봉산)">청평사 유원지와 오봉산 (마적산~경운산~오봉산)</a>
+</p>
+</li>
+<li>
+<span class="fr sNumber alpha50">2017-06-25 00:03:46</span>
+<p style="background: url(http://i1.daumcdn.net/pimg/blog3/menu_icon13.gif) no-repeat 0 6px; padding: 0 0 0 8px;">
+<a href="http://blog.daum.net/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=464&amp;categoryId=53&amp;regdt=20170625000346" title="담양 추월산에서.. 호남정맥 밀재~추월산~천치재">담양 추월산에서.. 호남정맥 밀재~추월산~천치재</a>
+</p>
+</li>
+<li>
+<span class="fr sNumber alpha50">2017-06-19 00:18:44</span>
+<p style="background: url(http://i1.daumcdn.net/pimg/blog3/menu_icon13.gif) no-repeat 0 6px; padding: 0 0 0 8px;">
+<a href="http://blog.daum.net/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=463&amp;categoryId=53&amp;regdt=20170619001844" title="남근석과 누운남근석~ 제천의 동산,작성산">남근석과 누운남근석~ 제천의 동산,작성산</a>
+</p>
+</li>
+<li>
+<span class="fr sNumber alpha50">2017-06-14 00:03:39</span>
+<p style="background: url(http://i1.daumcdn.net/pimg/blog3/menu_icon13.gif) no-repeat 0 6px; padding: 0 0 0 8px;">
+<a href="http://blog.daum.net/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=462&amp;categoryId=53&amp;regdt=20170614000339" title="지리산 천왕봉 당일코스와 교통편 알아보기.">지리산 천왕봉 당일코스와 교통편 알아보기.</a>
+<span class="cB_Amp">[<strong>283</strong>]</span>
+</p>
+</li>
+<li>
+<span class="fr sNumber alpha50">2017-06-09 00:18:06</span>
+<p style="background: url(http://i1.daumcdn.net/pimg/blog3/menu_icon13.gif) no-repeat 0 6px; padding: 0 0 0 8px;">
+<a href="http://blog.daum.net/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=461&amp;categoryId=53&amp;regdt=20170609001806" title="태백산 참기생꽃과 6월 야생화.">태백산 참기생꽃과 6월 야생화.</a>
+</p>
+</li>
+</ul>
+</div>
+</div><!-- cContentinner --></div><!-- cContentOuter -->
+<div class="contentBoxB"><div class="roundBL"></div><div class="roundBC"></div><div class="roundBR"></div></div>
+</div><!-- cContentBox --></div><!-- cContent -->
+<script charset="utf-8" src="//m2.daumcdn.net/tiara/js/td.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+		
+		
+					if(window.isAjax){
+			try {
+				top.document.title = "청평사 유원지와 오봉산 (마적산~경운산~오봉산)".unescapeHTML();
+			} catch(e) {}
+		}
+		var __pageTracker = {};
+
+	if (typeof __Tiara != "undefined" && typeof __Tiara.__getTracker != "undefined") {
+		__pageTracker = __Tiara.__getTracker();
+	} else {
+		__pageTracker.__trackPageview = function() {};
+		__pageTracker.__setTitle = function() {};
+		__pageTracker.__setReferer = function() {};
+		__pageTracker.__addParam = function() {};
+	}
+
+	try {
+
+		if (typeof __pageTracker != "undefined") {
+			__pageTracker.__setTitle("청평사 유원지와 오봉산 (마적산~경운산~오봉산)");
+            
+    			    		try { __pageTracker.__setReferer(top.document.referrer); } catch(e) {}
+                __pageTracker.__addParam("category", "2017년");
+                __pageTracker.__addParam("articleno", "0p4Sd/465");
+                __pageTracker.__addParam("date", "2017-06-30 00:03:04");
+                __pageTracker.__addParam("isauthor", "N");
+                __pageTracker.__addParam("ishidden", "1");
+                __pageTracker.__addParam("comments", "0");
+                __pageTracker.__addParam("param1", "0");
+    			__pageTracker.__addParam("author", "0p4Sd");
+				    				__pageTracker.__addParam('plink','http://blog.daum.net/0709im/465');
+				    			try { __pageTracker.__trackPageview("http://blog.daum.net/_blog/BlogTypeView.do?blogid=0p4Sd&articleno=465"); } catch(e) {}
+						
+		}
+	} catch(e) {}
+	window.isArticleLoaded = true;
+</script> </div>
+<div class="sideBox" id="sideBar">
+<div class="menuGroupTop"></div>
+<div class="menuGroupBox ">
+<div class="menuGroupBg">
+<div class="sideColArea" id="sideBarCol1">
+<div class="menuBox" id="Profile" style="position:relative; z-index: 2;">
+<div class="menuEtcWraper ">
+<div class="menuMain" id="ProfileMenuMain">
+<div class="profileMenuBody">
+<img alt="블로그 이미지" id="profileImg" src="http://cfile208.uf.daum.net/image/257A574F56FC717811389A" width="141"/>
+<div class="title">
+<img alt="" class="myicon" height="21" src="http://cfs1.blog.daum.net/upload_control/download.blog?fhandle=MDVqb3VAZnMxLmJsb2cuZGF1bS5uZXQ6L01ZQ09OLzAvMTczLmpwZy50aHVtYg==&amp;filename=173.jpg" width="21"/>
+<a class="profileColor" href="javascript:;" onclick="chg_class_pos(this, 'this_user');">효빈</a>
+</div>
+<p class="profileColor" id="profileIam">
+									산행기를 보지 않고 남기는 댓글은 사양합니다.<br/>
+<br/>
+사진과 글은 시간의 결과물이니 퍼가는건 허하지 않습니다..<br/>
+<br/>
+친구신청보다는 편하게 놀러오세요~
+								</p>
+<div class="blogView profileColor">
+<a class="p11 profileColor profileView" href="/_blog/ProfileView.do?blogid=0p4Sd" onclick="viewAjaxArticle('/_blog/ProfileView.do?blogid=0p4Sd' , '', '-1' ); return false;"><span class="kr">블로그 소개</span><span class="en">About blog</span></a><span class="arrowright">▶</span>
+</div>
+</div><!-- end menuBody -->
+<img alt="" class="profileMenuBot" height="0" src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="0"/>
+</div><!-- end menuMain -->
+</div><!-- end menuWraper -->
+<div style="position:relative">
+<div class="top_sub_layer" id="this_user">
+<ul>
+<li class="out" onmouseout="chg_class(this, 'out')" onmouseover="chg_class(this, 'over')"><a href="javascript:;" onclick="addFriend('/_blog/FriendApp.do?blogid=&amp;friendBlogID=0p4Sd'); return false;">친구신청</a></li>
+<li class="out" onmouseout="chg_class(this, 'out')" onmouseover="chg_class(this, 'over')"><a href="javascript:;" onclick="bookmark('0709im', '효빈, 길을 나서다 ~'); return false;">즐겨찾기</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sideColArea" id="sideBarCol2">
+<div class="menuBox" id="Category">
+<div class="menuWraper borderN">
+<div class="menuTitle">
+<h3>
+<a href="javascript:;" onclick="foldMenuBoxTitle('CategoryArrow')"><span class="kr">카테고리</span><span class="en">Category</span></a>
+</h3>
+<img class="arrowdown" height="0" id="CategoryArrow" onclick="foldMenuBox(this);" src="http://i1.daumcdn.net/pimg/blog4/skin/common/img_blank.gif" width="0"/>
+</div>
+<div class="menuBody" style="display:none;">
+<ul>
+<li class="categoryTitle">
+<a class="sideListClr listType1" href="/_blog/BlogTypeMain.do?blogid=0p4Sd&amp;alllist=Y" id="cateTitle" onclick="viewAjaxArticle('/_blog/BlogTypeMain.do?blogid=0p4Sd&amp;alllist=Y', this  , '-1'  ); return false;">전체보기</a>
+<font class="p11 sideListClr pCnt">(<span id="totC">325</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=53&amp;dispkind=B2201" id="linkCategory_53" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=53&amp;dispkind=B2201&amp;navi=','53'  , '-1' ); return false;">2017년</a>
+<font class="p11 sideListClr pCnt">(<span id="totC53">38</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=50&amp;dispkind=B2201" id="linkCategory_50" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=50&amp;dispkind=B2201&amp;navi=','50'  , '-1' ); return false;">2016년</a>
+<font class="p11 sideListClr pCnt">(<span id="totC50">92</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=48&amp;dispkind=B2201" id="linkCategory_48" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=48&amp;dispkind=B2201&amp;navi=','48'  , '-1' ); return false;">2015년</a>
+<font class="p11 sideListClr pCnt">(<span id="totC48">76</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=47&amp;dispkind=B2203" id="linkCategory_47" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=47&amp;dispkind=B2203&amp;navi=','47'  , '-1' ); return false;">일상</a>
+<font class="p11 sideListClr pCnt">(<span id="totC47">15</span>)</font>
+</li>
+</ul>
+<ul class="folderTtl">
+<li class="categoryGroup">
+<a class="sideListClr fl" href="javascript:folderToggle('1');"><b>2014</b></a>
+<span class="arrowdown sideListClr" id="arrow_1" onclick="javascript:folderToggle('1');">▼▲</span>
+</li>
+</ul>
+<ul class="folderGrp" id="folderGrp_1" style="display:none;">
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=44&amp;dispkind=B2201" id="linkCategory_44" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=44&amp;dispkind=B2201&amp;navi=','44'  , '-1' ); return false;">2014년</a>
+<font class="p11 sideListClr pCnt">(<span id="totC44">69</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=10&amp;dispkind=B2201" id="linkCategory_10" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=10&amp;dispkind=B2201&amp;navi=','10'  , '-1' ); return false;">2014태기산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC10">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=9&amp;dispkind=B2201" id="linkCategory_9" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=9&amp;dispkind=B2201&amp;navi=','9'  , '-1' ); return false;">2014</a>
+<font class="p11 sideListClr pCnt">(<span id="totC9">1</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=8&amp;dispkind=B2201" id="linkCategory_8" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=8&amp;dispkind=B2201&amp;navi=','8'  , '-1' ); return false;">2014</a>
+<font class="p11 sideListClr pCnt">(<span id="totC8">1</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=11&amp;dispkind=B2201" id="linkCategory_11" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=11&amp;dispkind=B2201&amp;navi=','11'  , '-1' ); return false;">거제도</a>
+<font class="p11 sideListClr pCnt">(<span id="totC11">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=12&amp;dispkind=B2201" id="linkCategory_12" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=12&amp;dispkind=B2201&amp;navi=','12'  , '-1' ); return false;">선자령</a>
+<font class="p11 sideListClr pCnt">(<span id="totC12">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=14&amp;dispkind=B2201" id="linkCategory_14" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=14&amp;dispkind=B2201&amp;navi=','14'  , '-1' ); return false;">발왕산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC14">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=15&amp;dispkind=B2201" id="linkCategory_15" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=15&amp;dispkind=B2201&amp;navi=','15'  , '-1' ); return false;">강씨봉</a>
+<font class="p11 sideListClr pCnt">(<span id="totC15">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=16&amp;dispkind=B2201" id="linkCategory_16" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=16&amp;dispkind=B2201&amp;navi=','16'  , '-1' ); return false;">칠갑산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC16">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=17&amp;dispkind=B2201" id="linkCategory_17" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=17&amp;dispkind=B2201&amp;navi=','17'  , '-1' ); return false;">백덕산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC17">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=19&amp;dispkind=B2201" id="linkCategory_19" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=19&amp;dispkind=B2201&amp;navi=','19'  , '-1' ); return false;">제왕산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC19">1</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=20&amp;dispkind=B2201" id="linkCategory_20" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=20&amp;dispkind=B2201&amp;navi=','20'  , '-1' ); return false;">고루포기산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC20">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=21&amp;dispkind=B2201" id="linkCategory_21" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=21&amp;dispkind=B2201&amp;navi=','21'  , '-1' ); return false;">방태산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC21">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=22&amp;dispkind=B2201" id="linkCategory_22" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=22&amp;dispkind=B2201&amp;navi=','22'  , '-1' ); return false;">함백산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC22">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=23&amp;dispkind=B2201" id="linkCategory_23" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=23&amp;dispkind=B2201&amp;navi=','23'  , '-1' ); return false;">화개십리~쌍계사벗꽃</a>
+<font class="p11 sideListClr pCnt">(<span id="totC23">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=24&amp;dispkind=B2201" id="linkCategory_24" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=24&amp;dispkind=B2201&amp;navi=','24'  , '-1' ); return false;">노추산,사달산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC24">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=25&amp;dispkind=B2201" id="linkCategory_25" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=25&amp;dispkind=B2201&amp;navi=','25'  , '-1' ); return false;">몽가북계</a>
+<font class="p11 sideListClr pCnt">(<span id="totC25">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=33&amp;dispkind=B2201" id="linkCategory_33" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=33&amp;dispkind=B2201&amp;navi=','33'  , '-1' ); return false;">희양산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC33">1</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=26&amp;dispkind=B2201" id="linkCategory_26" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=26&amp;dispkind=B2201&amp;navi=','26'  , '-1' ); return false;">대둔산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC26">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=27&amp;dispkind=B2201" id="linkCategory_27" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=27&amp;dispkind=B2201&amp;navi=','27'  , '-1' ); return false;">오대산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC27">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=28&amp;dispkind=B2201" id="linkCategory_28" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=28&amp;dispkind=B2201&amp;navi=','28'  , '-1' ); return false;">서울 성곽길</a>
+<font class="p11 sideListClr pCnt">(<span id="totC28">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=45&amp;dispkind=B2201" id="linkCategory_45" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=45&amp;dispkind=B2201&amp;navi=','45'  , '-1' ); return false;">2013년</a>
+<font class="p11 sideListClr pCnt">(<span id="totC45">3</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=29&amp;dispkind=B2201" id="linkCategory_29" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=29&amp;dispkind=B2201&amp;navi=','29'  , '-1' ); return false;">대전 계족산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC29">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=30&amp;dispkind=B2201" id="linkCategory_30" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=30&amp;dispkind=B2201&amp;navi=','30'  , '-1' ); return false;">지리산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC30">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=31&amp;dispkind=B2201" id="linkCategory_31" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=31&amp;dispkind=B2201&amp;navi=','31'  , '-1' ); return false;">전주 모악산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC31">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=32&amp;dispkind=B2201" id="linkCategory_32" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=32&amp;dispkind=B2201&amp;navi=','32'  , '-1' ); return false;">가야산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC32">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=34&amp;dispkind=B2201" id="linkCategory_34" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=34&amp;dispkind=B2201&amp;navi=','34'  , '-1' ); return false;">북촌마을, 북악산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC34">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=35&amp;dispkind=B2201" id="linkCategory_35" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=35&amp;dispkind=B2201&amp;navi=','35'  , '-1' ); return false;">덕유산,남덕유산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC35">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=36&amp;dispkind=B2201" id="linkCategory_36" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=36&amp;dispkind=B2201&amp;navi=','36'  , '-1' ); return false;">창원 무학산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC36">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=37&amp;dispkind=B2201" id="linkCategory_37" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=37&amp;dispkind=B2201&amp;navi=','37'  , '-1' ); return false;">신불산.</a>
+<font class="p11 sideListClr pCnt">(<span id="totC37">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=38&amp;dispkind=B2201" id="linkCategory_38" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=38&amp;dispkind=B2201&amp;navi=','38'  , '-1' ); return false;">양산 천성산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC38">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=39&amp;dispkind=B2201" id="linkCategory_39" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=39&amp;dispkind=B2201&amp;navi=','39'  , '-1' ); return false;">창녕 화왕산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC39">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=40&amp;dispkind=B2201" id="linkCategory_40" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=40&amp;dispkind=B2201&amp;navi=','40'  , '-1' ); return false;">무장산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC40">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=41&amp;dispkind=B2201" id="linkCategory_41" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=41&amp;dispkind=B2201&amp;navi=','41'  , '-1' ); return false;">검봉산 봉화산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC41">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=42&amp;dispkind=B2201" id="linkCategory_42" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=42&amp;dispkind=B2201&amp;navi=','42'  , '-1' ); return false;">백운봉.용문산</a>
+<font class="p11 sideListClr pCnt">(<span id="totC42">0</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=43&amp;dispkind=B2201" id="linkCategory_43" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=43&amp;dispkind=B2201&amp;navi=','43'  , '-1' ); return false;">백두대간 </a>
+<font class="p11 sideListClr pCnt">(<span id="totC43">1</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=46&amp;dispkind=B2201" id="linkCategory_46" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=46&amp;dispkind=B2201&amp;navi=','46'  , '-1' ); return false;">2012년</a>
+<font class="p11 sideListClr pCnt">(<span id="totC46">26</span>)</font>
+</li>
+<li class="categoryList">
+<a class="sideListClr listType1 " href="/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=49&amp;dispkind=B2201" id="linkCategory_49" onclick="viewAjaxCateArticle('/_blog/ArticleCateList.do?blogid=0p4Sd&amp;CATEGORYID=49&amp;dispkind=B2201&amp;navi=','49'  , '-1' ); return false;">2015 백두대간</a>
+<font class="p11 sideListClr pCnt">(<span id="totC49">0</span>)</font>
+</li>
+</ul>
+<div class="menuFooter1" style="display:none;"></div>
+</div><!-- end menuBody -->
+<img alt="" class="menuBot" height="0" src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="0"/>
+</div><!-- end menuWraper --></div>
+</div>
+<div class="sideColArea" id="sideBarCol3">
+<div class="menuBox" id="Postingmap">
+<div class="menuWraper">
+<div class="menuTitle">
+<img class="arrowup" height="0" id="PostingMapArrow" onclick="foldMenuBox(this);" src="http://i1.daumcdn.net/pimg/blog4/skin/common/img_blank.gif" width="0"/>
+<h3><a href="javascript:;" onclick="foldMenuBoxTitle('PostingMapArrow')"><span class="kr">내글 지도</span><span class="en">my route</span></a>
+</h3>
+</div>
+<div class="menuBody" style="">
+<div class="my_route_wrap">
+<div id="myRouteFlashContainer"></div>
+</div>
+<div class="menuFooter2"><a class="p11 alpha60 sideListClr" href="http://blog.daum.net/ahahblog/13757511" target="_blank">자주 가는 주지역을 설정하세요!</a></div>
+</div><!-- end menuBody -->
+<img alt="" class="menuBot" height="0" src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="0"/>
+</div><!-- end menuWraper -->
+</div>
+</div>
+<div class="sideColArea" id="sideBarCol4">
+<div class="menuBox" id="Archive" style="z-index:999;">
+<div class="menuWraper">
+<div class="menuTitle">
+<h3><a href="javascript:;" onclick="foldMenuBoxTitle('ArchiveArrow')"><span class="kr">캘린더</span><span class="en">Calendar</span></a></h3>
+<img class="arrowup" height="0" id="ArchiveArrow" onclick="foldMenuBox(this);" src="http://i1.daumcdn.net/pimg/blog4/skin/common/img_blank.gif" width="0"/>
+</div>
+<div class="menuBody" style=" padding-top: 0px;">
+<div id="cMCal" style="padding-top: 12px;">
+<p><a class=" p11 sideListClr" href="#" onclick="goDayList(); return false;">일별보기</a></p>
+<ul id="archivelist"></ul>
+<div class="menuFooter2"></div>
+</div>
+<div id="cCal" style="padding-top: 12px;">
+<dl class="date_control">
+<dt class="sideListClr">
+<span id="calSelYear" onclick="clickAreaCheck = true; divDisplay('calYearList', 'block', true);">2010 <img alt="arrow" height="4" src="http://i1.daumcdn.net/pimg/blog3/admin/ic_fulldown_arrow.gif" width="5"/></span>
+<span id="calSelMonth" onclick="clickAreaCheck = true; divDisplay('calMonthList', 'block', true);"> <img alt="arrow" height="4" src="http://i1.daumcdn.net/pimg/blog3/admin/ic_fulldown_arrow.gif" width="5"/></span>
+</dt>
+<dd><a class="fr p11 sideListClr" href="#" onclick="goMonthList(); return false;">월별보기</a></dd>
+</dl>
+<div id="calYearList" style="background:#FFF">
+						 <a href="javascript:;" onclick="cal_selY(2001,'0p4Sd')">2001</a> <br/>
+						 <a href="javascript:;" onclick="cal_selY(2002,'0p4Sd')">2002</a> <br/>
+						 <a href="javascript:;" onclick="cal_selY(2003,'0p4Sd')">2003</a> <br/>
+						 <a href="javascript:;" onclick="cal_selY(2004,'0p4Sd')">2004</a> <br/>
+						 <a href="javascript:;" onclick="cal_selY(2005,'0p4Sd')">2005</a> <br/>
+						 <a href="javascript:;" onclick="cal_selY(2006,'0p4Sd')">2006</a> <br/>
+						 <a href="javascript:;" onclick="cal_selY(2007,'0p4Sd')">2007</a> <br/>
+						 <a href="javascript:;" onclick="cal_selY(2008,'0p4Sd')">2008</a> <br/>
+						 <a href="javascript:;" onclick="cal_selY(2009,'0p4Sd')">2009</a> <br/>
+						 <a href="javascript:;" onclick="cal_selY(2010,'0p4Sd')">2010</a> <br/>
+						 <a href="javascript:;" onclick="cal_selY(2011,'0p4Sd')">2011</a> <br/>
+						 <a href="javascript:;" onclick="cal_selY(2012,'0p4Sd')">2012</a> <br/>
+						 <a href="javascript:;" onclick="cal_selY(2013,'0p4Sd')">2013</a> <br/>
+						 <a href="javascript:;" onclick="cal_selY(2014,'0p4Sd')">2014</a> <br/>
+						 <a href="javascript:;" onclick="cal_selY(2015,'0p4Sd')">2015</a> <br/>
+						 <a href="javascript:;" onclick="cal_selY(2016,'0p4Sd')">2016</a> <br/>
+</div>
+<div id="calMonthList" style="background:#FFF">
+						 <a href="javascript:;" onclick="cal_selM(01,'0p4Sd')">01</a> <br/>
+						 <a href="javascript:;" onclick="cal_selM(02,'0p4Sd')">02</a> <br/>
+						 <a href="javascript:;" onclick="cal_selM(03,'0p4Sd')">03</a> <br/>
+						 <a href="javascript:;" onclick="cal_selM(04,'0p4Sd')">04</a> <br/>
+						 <a href="javascript:;" onclick="cal_selM(05,'0p4Sd')">05</a> <br/>
+						 <a href="javascript:;" onclick="cal_selM(06,'0p4Sd')">06</a> <br/>
+						 <a href="javascript:;" onclick="cal_selM(07,'0p4Sd')">07</a> <br/>
+						 <a href="javascript:;" onclick="cal_selM(08,'0p4Sd')">08</a> <br/>
+						 <a href="javascript:;" onclick="cal_selM(09,'0p4Sd')">09</a> <br/>
+						 <a href="javascript:;" onclick="cal_selM(10,'0p4Sd')">10</a> <br/>
+						 <a href="javascript:;" onclick="cal_selM(11,'0p4Sd')">11</a> <br/>
+						 <a href="javascript:;" onclick="cal_selM(12,'0p4Sd')">12</a> <br/>
+</div>
+<div id="calendar">
+<table border="0" cellpadding="0" cellspacing="0" id="tab_cal">
+<tbody>
+<tr>
+<th class="sideListClr">일</th>
+<th class="sideListClr">월</th>
+<th class="sideListClr">화</th>
+<th class="sideListClr">수</th>
+<th class="sideListClr">목</th>
+<th class="sideListClr">금</th>
+<th class="sideListClr">토</th>
+</tr><tr>
+<td></td><td></td>
+<td class="sideListClr" id="cM1" title="">1</td>
+<td class="sideListClr" id="cM2" title="">2</td>
+<td class="sideListClr" id="cM3" title="">3</td>
+<td class="sideListClr under" id="cM4" title="">4</td>
+<td class="sideListClr" id="cM5" title="어린이날">5</td>
+</tr><tr>
+<td class="sideListClr" id="cM6" title="">6</td>
+<td class="sideListClr" id="cM7" title="">7</td>
+<td class="sideListClr" id="cM8" title="">8</td>
+<td class="sideListClr" id="cM9" title="">9</td>
+<td class="sideListClr" id="cM10" title="">10</td>
+<td class="sideListClr" id="cM11" title="">11</td>
+<td class="sideListClr" id="cM12" title="">12</td>
+</tr><tr>
+<td class="sideListClr" id="cM13" title="">13</td>
+<td class="sideListClr" id="cM14" title="">14</td>
+<td class="sideListClr" id="cM15" title="">15</td>
+<td class="sideListClr" id="cM16" title="">16</td>
+<td class="sideListClr" id="cM17" title="">17</td>
+<td class="sideListClr" id="cM18" title="">18</td>
+<td class="sideListClr" id="cM19" title="">19</td>
+</tr><tr>
+<td class="sideListClr" id="cM20" title="">20</td>
+<td class="sideListClr" id="cM21" title="">21</td>
+<td class="sideListClr" id="cM22" title="">22</td>
+<td class="sideListClr" id="cM23" title="">23</td>
+<td class="sideListClr" id="cM24" title="부처님오신날">24</td>
+<td class="sideListClr" id="cM25" title="">25</td>
+<td class="sideListClr" id="cM26" title="">26</td>
+</tr><tr>
+<td class="sideListClr" id="cM27" title="">27</td>
+<td class="sideListClr" id="cM28" title="">28</td>
+<td class="sideListClr" id="cM29" title="">29</td>
+<td class="sideListClr" id="cM30" title="">30</td>
+<td class="sideListClr" id="cM31" title="">31</td><td></td><td></td>
+</tr>
+</tbody></table>
+</div>
+<div class="menuFooter2"></div>
+</div>
+</div><!-- end menuBody -->
+<img alt="" class="menuBot" height="0" src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="0"/>
+</div><!-- end menuWraper -->
+</div>
+<script type="text/javascript">
+	var viewDate = new Date();
+	var s_year = viewDate.getFullYear();
+	var s_month = viewDate.getMonth()+1;
+	viewCalendar(s_year, s_month);
+</script>
+</div>
+<div class="sideColArea" id="sideBarCol5">
+<div class="menuBox" id="Recent">
+<div class="menuWraper">
+<div class="menuTitle">
+<h3><a href="javascript:;" onclick="foldMenuBoxTitle('RecentArrow')"><span class="kr">최근 글들</span><span class="en">Recent post</span></a></h3>
+<img class="arrowdown" height="0" id="RecentArrow" onclick="foldMenuBox(this);" src="http://i1.daumcdn.net/pimg/blog4/skin/common/img_blank.gif" width="0"/>
+</div>
+<div class="menuBody" style="display:none;">
+<table>
+<colgroup>
+<col width="12"/><col/><col width="12"/>
+</colgroup>
+<tr>
+<td class="navi_btn"><a href="#" onclick="chgRecentThumbnailPre(); return false;"><img class="out_arrow" height="18" onmouseout="isthumbovered=false;this.className = 'out_arrow';" onmouseover="isthumbovered=true; this.className = 'over_arrow';" src="http://i1.daumcdn.net/pimg/blog/p_img/btn_left.gif" width="12"/></a></td>
+<td class="thum_td">
+<div class="re_thumbg" id="recent_thumb_0" onmouseout="isthumbovered=false;" onmouseover="isthumbovered=true;">
+<a class="link_reMov" href="/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=465&amp;_bloghome_menu=recentthumb" onclick="viewAjaxArticle('/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=465&amp;_bloghome_menu=recentthumb'); hideDashBoard(); return false;" onmouseout="isthumbovered=false;" onmouseover="isthumbovered=true;">
+<img alt="" height="95" onload="loadRecentImage(95,95,this,'http://cfile220.uf.daum.net/C200x180/267DB4445947A0201ADD6D')" src="http://cfile220.uf.daum.net/C200x180/267DB4445947A0201ADD6D" width="95"/>
+</a>
+</div>
+<div class="re_thumbg" id="recent_thumb_1" onmouseout="isthumbovered=false;" onmouseover="isthumbovered=true;">
+<a class="link_reMov" href="/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=464&amp;_bloghome_menu=recentthumb" onclick="viewAjaxArticle('/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=464&amp;_bloghome_menu=recentthumb'); hideDashBoard(); return false;" onmouseout="isthumbovered=false;" onmouseover="isthumbovered=true;">
+<img alt="" height="95" onload="loadRecentImage(95,95,this,'http://cfile233.uf.daum.net/C200x180/2771CE3859492FE91E3271')" src="http://cfile233.uf.daum.net/C200x180/2771CE3859492FE91E3271" width="95"/>
+</a>
+</div>
+<div class="re_thumbg" id="recent_thumb_2" onmouseout="isthumbovered=false;" onmouseover="isthumbovered=true;">
+<a class="link_reMov" href="/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=463&amp;_bloghome_menu=recentthumb" onclick="viewAjaxArticle('/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=463&amp;_bloghome_menu=recentthumb'); hideDashBoard(); return false;" onmouseout="isthumbovered=false;" onmouseover="isthumbovered=true;">
+<img alt="" height="95" onload="loadRecentImage(95,95,this,'http://cfile227.uf.daum.net/C200x180/2349844D59420EF92E7F0D')" src="http://cfile227.uf.daum.net/C200x180/2349844D59420EF92E7F0D" width="95"/>
+</a>
+</div>
+<div class="re_thumbg" id="recent_thumb_3" onmouseout="isthumbovered=false;" onmouseover="isthumbovered=true;">
+<a class="link_reMov" href="/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=462&amp;_bloghome_menu=recentthumb" onclick="viewAjaxArticle('/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=462&amp;_bloghome_menu=recentthumb'); hideDashBoard(); return false;" onmouseout="isthumbovered=false;" onmouseover="isthumbovered=true;">
+<img alt="" height="95" onload="loadRecentImage(95,95,this,'http://cfile219.uf.daum.net/C200x180/216FCB45593C6EA82D4730')" src="http://cfile219.uf.daum.net/C200x180/216FCB45593C6EA82D4730" width="95"/>
+</a>
+</div>
+</td>
+<td class="navi_btn"><a href="#" onclick="chgRecentThumbnailNext(); return false;"><img class="out_arrow" height="18" onmouseout="isthumbovered=false;this.className = 'out_arrow';" onmouseover="isthumbovered=true; this.className = 'over_arrow';" src="http://i1.daumcdn.net/pimg/blog/p_img/btn_right.gif" width="12"/></a></td>
+</tr>
+</table>
+<ul>
+<li>
+<span class="txt_bul sideListClr">•</span><a class="sideListClr" href="/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=465&amp;_bloghome_menu=recenttext" onclick="viewAjaxArticle('/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=465&amp;_bloghome_menu=recenttext'); hideDashBoard(); return false;" onmouseout="hideDashBoard();" onmouseover="showPostLayer(this,'source_465',event)">청평사 유원지와 ..</a><br/>
+<div id="source_465" style="display:none;">
+<div class="previewContent">
+<dl>
+<dt>청평사 유원지와 ..</dt>
+<dd>|</dd>
+<dd>2017-06-30 00:03:04</dd>
+</dl>
+<div class="summaryArea">
+<div class="thumbArea">
+<img alt="" height="85" onload="javascript:loadRecentImage(85,85,this,'http://cfile220.uf.daum.net/C200x180/267DB4445947A0201ADD6D')" src="http://cfile220.uf.daum.net/C200x180/267DB4445947A0201ADD6D" width="85"/>
+</div>
+																	 용화산~오봉산 연계산행은 다녀와봤지만 마적산,경운산을 경유해보지 못해 오랜만에 소양호가 있는 오봉산으로 간다. 오늘 들머리는 강원도 춘천시 신북읍 천전리 해강아파트 앞 풀내음이란 청국장집을 기준으로 삼으면 되겠다. 산행코스 :풀내음 청국장집~마적산~경운산~오봉산~청평..  
+									<div class="cl"></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<span class="txt_bul sideListClr">•</span><a class="sideListClr" href="/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=464&amp;_bloghome_menu=recenttext" onclick="viewAjaxArticle('/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=464&amp;_bloghome_menu=recenttext'); hideDashBoard(); return false;" onmouseout="hideDashBoard();" onmouseover="showPostLayer(this,'source_464',event)">담양 추월산에서...</a><br/>
+<div id="source_464" style="display:none;">
+<div class="previewContent">
+<dl>
+<dt>담양 추월산에서...</dt>
+<dd>|</dd>
+<dd>2017-06-25 00:03:46</dd>
+</dl>
+<div class="summaryArea">
+<div class="thumbArea">
+<img alt="" height="85" onload="javascript:loadRecentImage(85,85,this,'http://cfile233.uf.daum.net/C200x180/2771CE3859492FE91E3271')" src="http://cfile233.uf.daum.net/C200x180/2771CE3859492FE91E3271" width="85"/>
+</div>
+																	 감회 새로운 추월산에 간다. 정확히는 호남정맥을 잇는 것이지만 그저 추월산의 여름을 느껴보고자 함이다. 산행코스 : 밀재~추월산~수리봉~깃대봉~가인연수원~천치재 (약 10~11km 짧게 잡힌 코스로 어렵지 않게 마칠수 있는 날이다. 하지만 산행에 있어 쉬운 날이란 없다.더위에 지치기 쉬..  
+									<div class="cl"></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<span class="txt_bul sideListClr">•</span><a class="sideListClr" href="/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=463&amp;_bloghome_menu=recenttext" onclick="viewAjaxArticle('/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=463&amp;_bloghome_menu=recenttext'); hideDashBoard(); return false;" onmouseout="hideDashBoard();" onmouseover="showPostLayer(this,'source_463',event)">남근석과 누운남근..</a><br/>
+<div id="source_463" style="display:none;">
+<div class="previewContent">
+<dl>
+<dt>남근석과 누운남근..</dt>
+<dd>|</dd>
+<dd>2017-06-19 00:18:44</dd>
+</dl>
+<div class="summaryArea">
+<div class="thumbArea">
+<img alt="" height="85" onload="javascript:loadRecentImage(85,85,this,'http://cfile227.uf.daum.net/C200x180/2349844D59420EF92E7F0D')" src="http://cfile227.uf.daum.net/C200x180/2349844D59420EF92E7F0D" width="85"/>
+</div>
+																	 작년에도 한번 다녀왔던 동산~작성산. 이번엔 다른 방향에서 오른다 하니 이번 기회에 길도 확실히 파악할겸 지난번엔 보지못한 무쏘바위(누운남근석)도 볼겸 공지 올라온 산악회를 따라나선다. 산행코스 : 갑오고개~동산~새목재~작성산~무암사~남근석~누운남근석(무쏘바위) 작은동산~외..  
+									<div class="cl"></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<span class="txt_bul sideListClr">•</span><a class="sideListClr" href="/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=462&amp;_bloghome_menu=recenttext" onclick="viewAjaxArticle('/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=462&amp;_bloghome_menu=recenttext'); hideDashBoard(); return false;" onmouseout="hideDashBoard();" onmouseover="showPostLayer(this,'source_462',event)">지리산 천왕봉 당..</a><br/>
+<div id="source_462" style="display:none;">
+<div class="previewContent">
+<dl>
+<dt>지리산 천왕봉 당..</dt>
+<dd>|</dd>
+<dd>2017-06-14 00:03:39</dd>
+</dl>
+<div class="summaryArea">
+<div class="thumbArea">
+<img alt="" height="85" onload="javascript:loadRecentImage(85,85,this,'http://cfile219.uf.daum.net/C200x180/216FCB45593C6EA82D4730')" src="http://cfile219.uf.daum.net/C200x180/216FCB45593C6EA82D4730" width="85"/>
+</div>
+																	 6월 중순까진 지리산에 여름꽃들이 많이 피어나지 않는다. 그래서 7월까지 기다렸다 노고단을 경유하려 했다. 그러나 가고자 할때의 이 마음이란건 내가 통제할 방법이 없다. 동서울터미널에서 아침 7시 첫차를 타고 오랜만에 백무동으로 간다. 꼬박 4시간 10분을 달려 백무동에 도착한 함..  
+									<div class="cl"></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<span class="txt_bul sideListClr">•</span><a class="sideListClr" href="/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=461&amp;_bloghome_menu=recenttext" onclick="viewAjaxArticle('/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=461&amp;_bloghome_menu=recenttext'); hideDashBoard(); return false;" onmouseout="hideDashBoard();" onmouseover="showPostLayer(this,'source_461',event)">태백산 참기생꽃과..</a><br/>
+<div id="source_461" style="display:none;">
+<div class="previewContent">
+<dl>
+<dt>태백산 참기생꽃과..</dt>
+<dd>|</dd>
+<dd>2017-06-09 00:18:06</dd>
+</dl>
+<div class="summaryArea">
+<div class="thumbArea">
+<img alt="" height="85" onload="javascript:loadRecentImage(85,85,this,'http://cfile234.uf.daum.net/C200x180/2708A64E59366814104B69')" src="http://cfile234.uf.daum.net/C200x180/2708A64E59366814104B69" width="85"/>
+</div>
+																	 국립공원으로 승격된 태백산에 인사가 늦었다. 태백산~6월의 숲을 만나러 간다. 동서울터미널에서 아침 6시 30분차를 타고 태백으로 가서 당골행 9시 35분차를 탈수 있었다. 다음 차편은 10시.. 당골행은 30여분 간격으로 교통편 아주 좋은 편이다. 태백산 국립공원 당골 입구. 예전엔 당골이..  
+									<div class="cl"></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<span class="txt_bul sideListClr">•</span><a class="sideListClr" href="/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=460&amp;_bloghome_menu=recenttext" onclick="viewAjaxArticle('/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=460&amp;_bloghome_menu=recenttext'); hideDashBoard(); return false;" onmouseout="hideDashBoard();" onmouseover="showPostLayer(this,'source_460',event)">북한산 비봉능선과..</a><br/>
+<div id="source_460" style="display:none;">
+<div class="previewContent">
+<dl>
+<dt>북한산 비봉능선과..</dt>
+<dd>|</dd>
+<dd>2017-06-04 00:03:58</dd>
+</dl>
+<div class="summaryArea">
+<div class="thumbArea">
+<img alt="" height="85" onload="javascript:loadRecentImage(85,85,this,'http://cfile217.uf.daum.net/C200x180/2717E236592FD05B1CE613')" src="http://cfile217.uf.daum.net/C200x180/2717E236592FD05B1CE613" width="85"/>
+</div>
+																	 하늘이 깨끗한 날~ 그냥 흘려보내기 아까워 좀 늦은 시간이지만 북한산으로 간다. 아주 오랜만에 비봉능선에 올라보고자 함이다. 산행코스 : 불광역~족두리봉~향로봉~비봉~사모바위~응봉능선~진관사 불광역 2번 출구로 나와 북한산생태공원(장미공원) 입구에 서니 오후 3시 10분이 다 되어..  
+									<div class="cl"></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<span class="txt_bul sideListClr">•</span><a class="sideListClr" href="/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=459&amp;_bloghome_menu=recenttext" onclick="viewAjaxArticle('/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=459&amp;_bloghome_menu=recenttext'); hideDashBoard(); return false;" onmouseout="hideDashBoard();" onmouseover="showPostLayer(this,'source_459',event)">설악산 공룡능선(..</a><br/>
+<div id="source_459" style="display:none;">
+<div class="previewContent">
+<dl>
+<dt>설악산 공룡능선(..</dt>
+<dd>|</dd>
+<dd>2017-05-29 00:05:18</dd>
+</dl>
+<div class="summaryArea">
+<div class="thumbArea">
+<img alt="" height="85" onload="javascript:loadRecentImage(85,85,this,'http://cfile210.uf.daum.net/C200x180/266240435926C7B3193003')" src="http://cfile210.uf.daum.net/C200x180/266240435926C7B3193003" width="85"/>
+</div>
+																	 5월이 가기 전 설악을 아니 다녀오면 좀 허전한 5월로 남을것만 같다. 동서울터미널에서 아침 6시 30분차를 타고 오색으로 간다. 이제 오색터미널까지 갈 필요없이 오색등산로 입구에서 내리면 된다. 요금도 100원이 싸구요~ 9시 10분.등로에 들어서 처음 눈에 들어오는 꽃. 아휴~ 젤리같이 ..  
+									<div class="cl"></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<span class="txt_bul sideListClr">•</span><a class="sideListClr" href="/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=458&amp;_bloghome_menu=recenttext" onclick="viewAjaxArticle('/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=458&amp;_bloghome_menu=recenttext'); hideDashBoard(); return false;" onmouseout="hideDashBoard();" onmouseover="showPostLayer(this,'source_458',event)">소백산 5월 야생화..</a><br/>
+<div id="source_458" style="display:none;">
+<div class="previewContent">
+<dl>
+<dt>소백산 5월 야생화..</dt>
+<dd>|</dd>
+<dd>2017-05-23 00:05:20</dd>
+</dl>
+<div class="summaryArea">
+<div class="thumbArea">
+<img alt="" height="85" onload="javascript:loadRecentImage(85,85,this,'http://cfile233.uf.daum.net/C200x180/2528144A591E35AE25783E')" src="http://cfile233.uf.daum.net/C200x180/2528144A591E35AE25783E" width="85"/>
+</div>
+																	 잦은 걸음은 행여 물릴까 걱정이기도 하지만 계절이 바뀔때마다 그 속에서 피고 지는 들풀꽃나무가 다를진데 지루함이란 있을수 없겠다. 동서울터미널에서 아침 7시 첫차를 타고 단양에 내려온다. 단양은 가볼곳 많은 관광지답게 터미널과 주변을 새단장해 깨끗하고 볼거리 풍부한 곳이..  
+									<div class="cl"></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<span class="txt_bul sideListClr">•</span><a class="sideListClr" href="/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=457&amp;_bloghome_menu=recenttext" onclick="viewAjaxArticle('/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=457&amp;_bloghome_menu=recenttext'); hideDashBoard(); return false;" onmouseout="hideDashBoard();" onmouseover="showPostLayer(this,'source_457',event)">청학동 삼신봉</a><br/>
+<div id="source_457" style="display:none;">
+<div class="previewContent">
+<dl>
+<dt>청학동 삼신봉</dt>
+<dd>|</dd>
+<dd>2017-05-18 00:07:49</dd>
+</dl>
+<div class="summaryArea">
+<div class="thumbArea">
+<img alt="" height="85" onload="javascript:loadRecentImage(85,85,this,'http://cfile229.uf.daum.net/C200x180/25378E375917DECF256BAB')" src="http://cfile229.uf.daum.net/C200x180/25378E375917DECF256BAB" width="85"/>
+</div>
+																	 어렸을땐 그 이름만으로도 참 신기하게 느껴졌던 청학동. 그 청학동을 감싸안은 봉우리. 오랜만에 삼신봉을 만나러 간다. 경남 하동군 청암면 묵계리. 청학동.그 이름에서 풍기는 아우라처럼 구불구불 깊은 오지. 중산리와 거림을 거쳐 청학동 입구에 도착하니 이미 11시 40분이 넘어서고 ..  
+									<div class="cl"></div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<span class="txt_bul sideListClr">•</span><a class="sideListClr" href="/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=456&amp;_bloghome_menu=recenttext" onclick="viewAjaxArticle('/_blog/BlogTypeView.do?blogid=0p4Sd&amp;articleno=456&amp;_bloghome_menu=recenttext'); hideDashBoard(); return false;" onmouseout="hideDashBoard();" onmouseover="showPostLayer(this,'source_456',event)">대중교통으로 상학..</a><br/>
+<div id="source_456" style="display:none;">
+<div class="previewContent">
+<dl>
+<dt>대중교통으로 상학..</dt>
+<dd>|</dd>
+<dd>2017-05-12 00:29:42</dd>
+</dl>
+<div class="summaryArea">
+<div class="thumbArea">
+<img alt="" height="85" onload="javascript:loadRecentImage(85,85,this,'http://cfile233.uf.daum.net/C200x180/2429ED385911BE3C0C8BB6')" src="http://cfile233.uf.daum.net/C200x180/2429ED385911BE3C0C8BB6" width="85"/>
+</div>
+																	 최근 너무 편한 산행에만 길들여 있었나보다. 나에게 가장 힐링이 되어줄 산행이 무언지 나는 잘 알고 있다. 동서울터미널에서 아침 6시 50분차로 청주에 거서 청주에서 8시 45분 차를 타고 보은으로 간다. 물론 바로 서울에서 보은행 버스를 타도 된다. 보은 시외버스터미널에 도착해 시내..  
+									<div class="cl"></div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div><!-- end menuBody -->
+<img alt="" class="menuBot" height="0" src="http://i1.daumcdn.net/cafeimg/cf_img2/img_blank2.gif" width="0"/>
+</div><!-- end menuWraper -->
+</div>
+</div>
+<div class="clearDiv"></div>
+</div><!-- end menuGroupBg -->
+</div><!-- end menuGroupBox -->
+<div class="menuGroupBot"></div> </div>
+<div class="sideBox" id="sideBarPlus">
+<div class="menuGroupTop"></div>
+<div class="menuGroupBox ">
+<div class="menuGroupBg">
+<div class="sideColArea" id="sidePlusCol1">
+</div>
+<div class="sideColArea" id="sidePlusCol2">
+</div>
+<div class="sideColArea" id="sidePlusCol3">
+</div>
+<div class="sideColArea" id="sidePlusCol4">
+</div>
+<div class="sideColArea" id="sidePlusCol5">
+</div>
+<div class="clearDiv"></div>
+</div><!-- end menuGroupBg -->
+</div><!-- end menuGroupBox -->
+<div class="menuGroupBot"></div> </div>
+</div>
+<br style="clear:both;height:1px;font-size:1px;"/>
+</div>
+<div class="containerBot" id="containerBot"></div>
+<script type="text/javascript">var ftop = getAbsoluteTop(document.getElementById("contentArea"));</script>
+<div class="cl"> </div>
+<div class="footerAlignC footerWidthW" id="footer">
+<div class="copy contColor">효빈's blog is powered by <a class="contColor" href="http://www.kakaocorp.com/main" target="_blank"><b>Kakao Corp.</b></a></div>
+</div>
+<!-- 페이지 마지막 -->
+<div><img alt="" height="0" src="https://logins.daum.net/accounts/auth.gif" width="0"/></div>
+<script charset="utf-8" src="//m2.daumcdn.net/tiara/js/td.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	if (!window.isAjax && !window.isArticleLoaded) {
+		var __pageTracker = {};
+
+		if (typeof __Tiara != "undefined" && typeof __Tiara.__getTracker != "undefined") {
+			__pageTracker = __Tiara.__getTracker();
+		} else {
+			__pageTracker.__trackPageview = function() {};
+			__pageTracker.__setTitle = function() {};
+		}
+
+		try {
+			if (typeof __pageTracker != "undefined") {
+				__pageTracker.__setTitle("청평사 유원지와 오봉산 (마적산~경운산~오봉산)");
+				try { __pageTracker.__trackPageview(); } catch(e) {}
+			}
+		} catch(e) {}
+	} else {
+		window.isAjax = false;
+	}
+</script>
+<iframe frameborder="0" height="0" id="blog_koclick" name="blog_koclick" src="about:blank" width="0"></iframe>
+<input id="blog_curURI" type="hidden"/>
+<script type="text/javascript">
+(function(){
+	var url = document.location.href;
+	var index = url.indexOf("blog.daum.net/");
+	var curURIDOM = document.getElementById("blog_curURI");
+	var curLocation = url;	
+	if( index > -1 ) {
+		var uri = url.substring(index+14);
+		curLocation = "/" + uri;
+		var koclick_url = "/_action/"+uri;
+		window.frames["blog_koclick"].location.replace(koclick_url);
+	}
+	if(curURIDOM){
+		curURIDOM.value = curLocation;
+	}
+})();
+
+</script>
+</div>
+<script language="javascript" type="text/javascript">var ftop = getAbsoluteTop(document.getElementById("contentArea"));</script>
+<script language="javascript" type="text/javascript">
+<!--
+	initHome();
+
+if (typeof Blog !== 'undefined') {
+	Blog.Ready.trigger();
+}
+//-->
+</script>
+</body>
